@@ -5,9 +5,10 @@ from streamlit_option_menu import option_menu
 import dashboard,courses,students,teacher,Sessions
 import datetime
 
-unique_key = f"option_menu_{int(datetime.datetime.now().timestamp())}"
+
 #st.set_page_config(page_title='Streamlit', page_icon='🐍', initial_sidebar_state='collapsed')
 def run():
+    unique_key = f"option_menu_{int(datetime.datetime.now().timestamp())}"
     with st.sidebar:
                     count=0        
                     app = option_menu(

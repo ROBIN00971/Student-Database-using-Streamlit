@@ -41,9 +41,10 @@ def app():
         st.table(df)
     
     if choice == "Delete Teacher":
-        selectedName = st.selectbox("Search", df['Name'], key="DeleteBox")
-        if st.button("Delete"):
-            df = df[(df["Name"] != selectedName)]
+        selectedName = st.selectbox("Search", df, key="DeleteBox")
+        if st.button("Delete",key="DeleteButton"):
+            cf = pd.read_csv("Csv//Teacher.csv")
+            cf = cf[(cf["Name"] != selectedName)]
 
         
         
