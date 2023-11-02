@@ -2,19 +2,22 @@ import streamlit as st
 import streamlit_authenticator as stauth
 from signup import sign_up, fetch_users
 from streamlit_option_menu import option_menu
-import dashboard,courses,students,staffs,Sessions
-import random as rand
+import dashboard,courses,students,teacher,Sessions
+import datetime
 
+unique_key = f"option_menu_{int(datetime.datetime.now().timestamp())}"
 #st.set_page_config(page_title='Streamlit', page_icon='🐍', initial_sidebar_state='collapsed')
 def run():
     with st.sidebar:
                     count=0        
                     app = option_menu(
                     menu_title='Navigation ',
-                    options=['Dashboard','Students','Staffs','Courses','Sessions'],
+                    options=['Dashboard','Students','Teachers','Courses','Sessions'],
                     icons=['house-fill','person-circle','trophy-fill','chat-fill','info-circle-fill'],
                     menu_icon='chat-text-fill',
-                    default_index=0,
+                    default_index=2,
+                    key=unique_key,
+                    # on_change=count(count),
                     #key=rand.random(),
                     styles={
                     "container": {"padding": "5!important","background-color":'black'},
@@ -29,8 +32,8 @@ def run():
         dashboard.app()                   
     if app== "Students":
         students.app()
-    if app == "Staffs":
-        staffs.app()
+    if app == "Teachers":
+        teacher.app()
     if app == "Courses":
         courses.app()
     if app == "Sessions":

@@ -1,4 +1,12 @@
 import streamlit as st
 import pandas as pd
 def app():
-    st.write("Sessions")
+    st.header("Session Database:calendar:")
+    st.subheader("Add View Delete")
+    choice=st.selectbox('Choose Operation',['Add Session','View Session','Delete Session'])
+    if choice=="Add Session":
+        st.write("Add")
+    if choice=="View Session":
+        st.write("View")
+    if choice=="Delete Session":
+        st.write("Delete")

@@ -1,4 +1,4 @@
 import streamlit as st
 import pandas as pd
 def app():
-    st.write("dashboard")
+    st.header("Dashboard:chart_with_upwards_trend:")
