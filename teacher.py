@@ -14,7 +14,7 @@ def validate_email(email):
 
 def app():
     st.header("Teacher Database:male-teacher:")
-    st.subheader("Add View Dlete")
+    st.subheader("Add View Delete")
     choice = st.selectbox('Choose Operation', [
         'Add Teacher', 'View Teacher', 'Delete Teacher'], key="TeacherBox")
     
