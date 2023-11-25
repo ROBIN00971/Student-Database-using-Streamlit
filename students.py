@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+
+df = pd.read_csv("Csv//Students.csv")
 def app():
     st.header("Student Database:male-student:")
     st.subheader("Add View Delete")
