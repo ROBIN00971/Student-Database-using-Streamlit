@@ -24,10 +24,10 @@ def on_change(app):
 
 #st.set_page_config(page_title='Streamlit', page_icon='🐍', initial_sidebar_state='collapsed')
 def run():
-    #with st.sidebar:
-    k="menu_1"
+    with st.sidebar:
+                    k="menu_1"
                         
-    app = option_menu(
+                    app = option_menu(
                     
                     menu_title='Navigation ',
                     options=['Dashboard','Students','Teachers','Courses','Sessions'],
@@ -36,7 +36,6 @@ def run():
                     default_index=0,
                     key=k,
                     #on_change=on_change(app),
-                    orientation='horizontal',
                     styles={
                     "container": {"padding": "5!important","background-color":'black'},
                     "icon": {"color": "white", "font-size": "23px"}, 
