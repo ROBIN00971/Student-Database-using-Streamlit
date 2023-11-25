@@ -25,11 +25,12 @@ def app():
             teacherEmail = st.text_input("Email")
             teacherGender = st.selectbox("Gender", ['Male', 'Female'])
             teacherPosition = st.text_input("Position")
+            teacherSubject = st.text_input("Subject")
             
             if st.form_submit_button("Add"):
                 if validate_email(teacherEmail):
                     to_add = {"Name": [teacherName], "Date": [teacherDate], "Email": [
-                        teacherEmail], "Gender": [teacherGender], "Position": [teacherPosition]}
+                        teacherEmail], "Gender": [teacherGender], "Position": [teacherPosition], "Subject": [teacherSubject]}
                     to_add = pd.DataFrame(to_add)
                     to_add.to_csv("Csv//Teacher.csv", mode='a',
                                 header=False, index=False)

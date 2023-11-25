@@ -5,21 +5,38 @@ from streamlit_option_menu import option_menu
 import dashboard,courses,students,teacher,Sessions
 import datetime
 
+def generate_key():
+    return f"option_menu_{int(datetime.datetime.now().timestamp())}"
+
+# Callback function for on_change
+def on_change(app):
+    if app == "Dashboard":
+        k="menu_1"               
+    if app== "Students":
+        k="menu_2"
+    if app == "Teachers":
+        k="menu_3"
+    if app == "Courses":
+        k="menu_4"
+    if app == "Sessions":
+        k="menu_5"
+
 
 #st.set_page_config(page_title='Streamlit', page_icon='🐍', initial_sidebar_state='collapsed')
 def run():
-    unique_key = f"option_menu_{int(datetime.datetime.now().timestamp())}"
-    with st.sidebar:
-                    count=0        
-                    app = option_menu(
+    #with st.sidebar:
+    k="menu_1"
+                        
+    app = option_menu(
+                    
                     menu_title='Navigation ',
                     options=['Dashboard','Students','Teachers','Courses','Sessions'],
                     icons=['house-fill','person-circle','trophy-fill','chat-fill','info-circle-fill'],
                     menu_icon='chat-text-fill',
-                    default_index=2,
-                    key=unique_key,
-                    # on_change=count(count),
-                    #key=rand.random(),
+                    default_index=0,
+                    key=k,
+                    #on_change=on_change(app),
+                    orientation='horizontal',
                     styles={
                     "container": {"padding": "5!important","background-color":'black'},
                     "icon": {"color": "white", "font-size": "23px"}, 
@@ -28,16 +45,21 @@ def run():
                 
                 )
                     
-    
+                
     if app == "Dashboard":
+        k="menu_1"
         dashboard.app()                   
     if app== "Students":
+        k="menu_2"
         students.app()
     if app == "Teachers":
+        k="menu_3"
         teacher.app()
     if app == "Courses":
+        k="menu_4"
         courses.app()
     if app == "Sessions":
+        k="menu_5"
         Sessions.app()
 
 
