@@ -5,63 +5,58 @@ from streamlit_option_menu import option_menu
 import dashboard,courses,students,teacher,Sessions
 import datetime
 
-def generate_key():
-    return f"option_menu_{int(datetime.datetime.now().timestamp())}"
+# def generate_key():
+#     return f"option_menu_{int(datetime.datetime.now().timestamp())}"
 
 # Callback function for on_change
-def on_change(app):
-    if app == "Dashboard":
-        k="menu_1"               
-    if app== "Students":
-        k="menu_2"
-    if app == "Teachers":
-        k="menu_3"
-    if app == "Courses":
-        k="menu_4"
-    if app == "Sessions":
-        k="menu_5"
+#def on_change(key):
+    
 
 
 #st.set_page_config(page_title='Streamlit', page_icon='🐍', initial_sidebar_state='collapsed')
+key_counter = 0
+
 def run():
+    global key_counter
     with st.sidebar:
-                    k="menu_1"
-                        
-                    app = option_menu(
-                    
-                    menu_title='Navigation ',
-                    options=['Dashboard','Students','Teachers','Courses','Sessions'],
-                    icons=['house-fill','person-circle','trophy-fill','chat-fill','info-circle-fill'],
-                    menu_icon='chat-text-fill',
-                    default_index=0,
-                    key=k,
-                    #on_change=on_change(app),
-                    styles={
-                    "container": {"padding": "5!important","background-color":'black'},
-                    "icon": {"color": "white", "font-size": "23px"}, 
-                    "nav-link": {"color":"white","font-size": "20px", "text-align": "left", "margin":"0px", "--hover-color": "blue"},
-                    "nav-link-selected": {"background-color": "#02ab21"},}
-                
-                )
-                    
-                
+        k = f"menu_{key_counter}"
+        key_counter += 1  # Increment the counter for the next use
+        app = option_menu(
+            menu_title='Navigation ',
+            options=['Dashboard', 'Students', 'Teachers', 'Courses', 'Sessions'],
+            icons=['house-fill', 'person-circle', 'trophy-fill', 'chat-fill', 'info-circle-fill'],
+            menu_icon='chat-text-fill',
+            default_index=2,
+            key=k,
+            styles={
+                "container": {"padding": "5!important", "background-color": 'black'},
+                "icon": {"color": "white", "font-size": "23px"},
+                "nav-link": {"color": "white", "font-size": "20px", "text-align": "left", "margin": "0px",
+                             "--hover-color": "blue"},
+                "nav-link-selected": {"background-color": "#02ab21"},
+            }
+        )
+
     if app == "Dashboard":
-        k="menu_1"
-        dashboard.app()                   
-    if app== "Students":
-        k="menu_2"
+        k = f"menu_{key_counter}"
+        key_counter += 1
+        dashboard.app()
+    if app == "Students":
+        k = f"menu_{key_counter}"
+        key_counter += 1
         students.app()
     if app == "Teachers":
-        k="menu_3"
+        k = f"menu_{key_counter}"
+        key_counter += 1
         teacher.app()
     if app == "Courses":
-        k="menu_4"
+        k = f"menu_{key_counter}"
+        key_counter += 1
         courses.app()
     if app == "Sessions":
-        k="menu_5"
+        k = f"menu_{key_counter}"
+        key_counter += 1
         Sessions.app()
-
-
 
 
 try:

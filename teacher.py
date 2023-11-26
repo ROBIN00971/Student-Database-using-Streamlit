@@ -45,7 +45,8 @@ def app():
         selectedName = st.selectbox("Search", df, key="DeleteBox")
         if st.button("Delete",key="DeleteButton"):
             cf = pd.read_csv("Csv//Teacher.csv")
-            cf = cf[(cf["Name"] != selectedName)]
+            cf = cf[cf["Name"] != selectedName]
+            cf.to_csv("Csv//Teacher.csv",index=False)
 
         
         
