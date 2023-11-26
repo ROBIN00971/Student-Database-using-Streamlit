@@ -3,17 +3,26 @@ import pandas as pd
 import plotly.express as px
 import time as t
 def app():
-    st.header("Dashboard:chart_with_upwards_trend:")
-    
-#st.set_page_config(page_icon="📈", page_title='📊Graph📊')
-
-    st.markdown('<p style="color:pink; font-size:75px;">Data Evaluation:</p>', unsafe_allow_html=True)
-    st.success("....Go Ahead....")
-
     teacher_data = pd.read_csv("Csv//Teacher.csv")
     students_data = pd.read_csv("Csv//Students.csv")
     course_data = pd.read_csv("Csv//Courses.csv")
     session_data = pd.read_csv("Csv//Sessions.csv")
+    st.header("Dashboard:chart_with_upwards_trend:")
+    col1,col2,col3,col4=st.columns(4)
+    with col1:
+        st.write("Students:",students_data[students_data.columns[0]].count())
+    with col2:
+        st.write("Teachers:",teacher_data[teacher_data.columns[0]].count())
+    with col3:
+        st.write("Courses:",course_data[course_data.columns[0]].count())
+    with col4:
+        st.write("Sessions:",session_data[session_data.columns[0]].count())
+#st.set_page_config(page_icon="📈", page_title='📊Graph📊')
+
+    #st.markdown('<p style="color:pink; font-size:75px;">Data Evaluation:</p>', unsafe_allow_html=True)
+    #st.success("....Go Ahead....")
+
+    
 
     selected_data = st.selectbox('Select Data', ['Select Data', 'Teacher Data', 'Students Data', 'course data', 'session data'])
     selected_chart_type = st.selectbox('Select Chart Type', ['Select Chart Type', 'Line Chart', 'Bar Chart', 'Pie Chart', 'Scatter Plot'])
