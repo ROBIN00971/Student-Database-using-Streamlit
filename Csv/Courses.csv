@@ -1,1 +1,7 @@
-CourseCode,CourseTitle,CourseDescription,CreditHours,Semester,Department,Instructor,Topics
+CourseCode,CourseTitle,CreditHours,Semester,Department,Instructor
+ESC-301 ,Analog and Digital Electronics  ,45 hr ,3-rd ,CSE ,Koushik Dey 
+PCC-CS301 ,Data Structure & Algorithms ,50 hr ,3-rd , CSE , Somnath Nag Choudary 
+PCC-CS302 ,Computer Organisation  ,40 hr ,3-rd , CSE , Anirban Dey  
+BSC-301 ,Mathematics-III ,55 hr ,3-rd , CSE , Manoranjon Jana  
+HSMC-301 ,Economics for Engineers  ,35 hr ,3-rd , CSE , Tamal Taru Das 
+PCC-CS393 ,IT Workshop ,30 hr ,3-rd , CSE , Alokananda Das  
