@@ -1,4 +1,4 @@
-SessionId,Name,Date,SessionType,Participants
-01141,github tutorial,12-10-2023,tutorial,450
-01137,innovation,20-09-2023,event,300
-01143,AI based Session,27-08-2023,tutorial,252
+SessionId,Name,Date,SessionType,Participants,StartTime,EndTime
+1141,github tutorial,12-10-2023,tutorial,450.0,11.00,02.00
+1137,innovation,20-09-2023,event,300.0,,
+1143,AI based Session,27-08-2023,tutorial,252.0,,

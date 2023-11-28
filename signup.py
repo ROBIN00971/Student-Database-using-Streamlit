@@ -12,20 +12,16 @@ db = deta.Base('YOUR_DETA_BASE')
 
 
 def insert_user(email, username, password):
-   
     date_joined = str(datetime.datetime.now())
-
     return db.put({'key': email, 'username': username, 'password': password, 'date_joined': date_joined})
 
 
 def fetch_users():
-    
     users = db.fetch()
     return users.items
 
 
 def get_user_emails():
-    
     users = db.fetch()
     emails = []
     for user in users.items:
@@ -34,7 +30,6 @@ def get_user_emails():
 
 
 def get_usernames():
-    
     users = db.fetch()
     usernames = []
     for user in users.items:
@@ -43,16 +38,13 @@ def get_usernames():
 
 
 def validate_email(email):
-    
     pattern = "^[a-zA-Z0-9-_]+@[a-zA-Z0-9]+\.[a-z]{1,3}$" 
-
     if re.match(pattern, email):
         return True
     return False
 
 
 def validate_username(username):
-
     pattern = "^[a-zA-Z0-9]*$"
     if re.match(pattern, username):
         return True
@@ -75,7 +67,6 @@ def sign_up():
                             if len(username) >= 2:
                                 if len(password1) >= 6:
                                     if password1 == password2:
-                                        # Add User to DB
                                         hashed_password = stauth.Hasher([password2]).generate()
                                         insert_user(email, username, hashed_password[0])
                                         st.success('Account created successfully!!')
