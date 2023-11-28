@@ -55,7 +55,7 @@ def app():
                     to_add = pd.DataFrame(to_add)
                     to_add.to_csv("Csv//Students.csv", mode='a',
                                 header=False, index=False)
-                    df = pd.read_csv("Csv//Teacher.csv")
+                    #df = pd.read_csv("Csv//Teacher.csv")
                     st.success("Submitted")
                 else:
                     st.warning("Invalid Email")
