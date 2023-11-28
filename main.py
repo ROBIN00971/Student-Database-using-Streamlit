@@ -26,7 +26,7 @@ def run():
             options=['Dashboard', 'Students', 'Teachers', 'Courses', 'Sessions'],
             icons=['house-fill', 'person-circle', 'trophy-fill', 'chat-fill', 'info-circle-fill'],
             menu_icon='chat-text-fill',
-            default_index=2,
+            default_index=0,
             key=k,
             styles={
                 "container": {"padding": "5!important", "background-color": 'black'},
