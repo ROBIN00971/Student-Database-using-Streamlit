@@ -64,6 +64,7 @@ try:
     emails = []
     usernames = []
     passwords = []
+    
 
     for user in users:
         emails.append(user['key'])
@@ -77,7 +78,7 @@ try:
     Authenticator = stauth.Authenticate(credentials, cookie_name='Streamlit', key='abcdef', cookie_expiry_days=4)
 
     email, authentication_status, username = Authenticator.login(':green[Login]', 'main')
-
+    
     info, info1 = st.columns(2)
 
     if not authentication_status:
@@ -89,11 +90,6 @@ try:
                 st.sidebar.subheader(f'Welcome {username}❤️')
                 Authenticator.logout('Log Out', 'sidebar')
                 run()
-                # let User see app
-                
-                 
-                
-
             elif not authentication_status:
                 with info:
                     st.error('Incorrect Password or username')
@@ -106,5 +102,5 @@ try:
 
 
 except:
-    run()
+    #run()
     st.success('Refresh Page')

@@ -12,32 +12,20 @@ db = deta.Base('YOUR_DETA_BASE')
 
 
 def insert_user(email, username, password):
-    """
-    Inserts Users into the DB
-    :param email:
-    :param username:
-    :param password:
-    :return User Upon successful Creation:
-    """
+   
     date_joined = str(datetime.datetime.now())
 
     return db.put({'key': email, 'username': username, 'password': password, 'date_joined': date_joined})
 
 
 def fetch_users():
-    """
-    Fetch Users
-    :return Dictionary of Users:
-    """
+    
     users = db.fetch()
     return users.items
 
 
 def get_user_emails():
-    """
-    Fetch User Emails
-    :return List of user emails:
-    """
+    
     users = db.fetch()
     emails = []
     for user in users.items:
@@ -46,10 +34,7 @@ def get_user_emails():
 
 
 def get_usernames():
-    """
-    Fetch Usernames
-    :return List of user usernames:
-    """
+    
     users = db.fetch()
     usernames = []
     for user in users.items:
@@ -58,12 +43,8 @@ def get_usernames():
 
 
 def validate_email(email):
-    """
-    Check Email Validity
-    :param email:
-    :return True if email is valid else False:
-    """
-    pattern = "^[a-zA-Z0-9-_]+@[a-zA-Z0-9]+\.[a-z]{1,3}$" #tesQQ12@gmail.com
+    
+    pattern = "^[a-zA-Z0-9-_]+@[a-zA-Z0-9]+\.[a-z]{1,3}$" 
 
     if re.match(pattern, email):
         return True
@@ -71,11 +52,6 @@ def validate_email(email):
 
 
 def validate_username(username):
-    """
-    Checks Validity of userName
-    :param username:
-    :return True if username is valid else False:
-    """
 
     pattern = "^[a-zA-Z0-9]*$"
     if re.match(pattern, username):
