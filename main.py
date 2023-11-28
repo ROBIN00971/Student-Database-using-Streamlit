@@ -89,6 +89,7 @@ try:
                 st.sidebar.subheader(f'Welcome {username}❤️')
                 Authenticator.logout('Log Out', 'sidebar')
                 Menu()
+                st.sidebar.subheader("Made with ❤️ by our team")
             elif not authentication_status:
                 with info:
                     st.error('Incorrect Password or username')
@@ -103,3 +104,4 @@ try:
 except:
     # run()
     st.success('Refresh Page')
+

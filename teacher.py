@@ -22,7 +22,7 @@ def app():
     if choice == "Add Teacher":
         with st.form(key="Teacherform", clear_on_submit=True):
             teacherName = st.text_input("Name")
-            teacherDate = str(datetime.datetime.now())
+            teacherDate = st.date_input("Date")
             teacherEmail = st.text_input("Email")
             teacherGender = st.selectbox("Gender", ['Male', 'Female'])
             teacherPosition = st.text_input("Position")
