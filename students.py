@@ -20,8 +20,8 @@ def app():
     if choice=="Add Student":
         with st.form(key="Studentform", clear_on_submit=True):
             studentName = st.text_input("Name")
-            studentregistry=st.text_input("Registration Number")
-            p = re.compile(r'^11700122\d{3}$')
+            studentregistry=st.number_input("Registration Number",min_value=100000000)
+            #p = re.compile(r'^\d{11}$')
             studentuniroll=st.number_input("Enter University roll number")
             # if not pattern.match(p):
             #     st.warning("Please enter a valid format.")
@@ -29,19 +29,19 @@ def app():
             studentroll=st.text_input("Enter College roll number")
             # if not pattern.match(studentroll):
             #     st.warning("Please enter a valid format.")
-            s = re.compile(r'^20\d{2}$')
+            #s = re.compile(r'^20\d{2}$')
             studentaddmission=st.text_input("Enter your admission year")
             # if not pattern.match(s):
             #     st.warning("Please enter a valid format.")
             studentGender = st.selectbox("Gender", ['Male', 'Female'])
-            studentdob=st.date_input("Enter your date of birth")
+            studentdob=st.date_input("Enter your date of birth",min_value=datetime.date(1980,1,1))
             studentaddress=st.text_area("Enter Address")
             studentEmail = st.text_input("Email")
             studentphn=st.text_input("Enter your phone number")
             studentbrnch=st.text_input("Enter your Branch name")
             studentsem=st.selectbox("Semester",[1,2,3,4,5,6,7,8])
             studentyear=st.selectbox("Year",[1,2,3,4])
-            m=re.compile(r'^\d{10}$')
+            #m=re.compile(r'^\d{10}$')
             studentparph = st.text_input("Enter your Guardian's phone number")
             # if not pattern.match(m):
             #     st.warning("Please enter valid phone number.")

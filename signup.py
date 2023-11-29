@@ -4,11 +4,11 @@ import datetime
 import re
 from deta import Deta
 
-DETA_KEY = 'd0l1xqmbcoe_99K28tF9QYSw5VggeMsgJdPGvVh2V45u'
+DETA_KEY = 'd05otaotjls_VpB7MGhQbLKh3Tn2aH1r3dkz3WMppzfR'
 
 deta = Deta(DETA_KEY)
 
-db = deta.Base('YOUR_DETA_BASE')
+db = deta.Base('CollegeLogin')
 
 
 def insert_user(email, username, password):
@@ -33,7 +33,7 @@ def get_usernames():
     users = db.fetch()
     usernames = []
     for user in users.items:
-        usernames.append(user['key'])
+        usernames.append(user['username'])
     return usernames
 
 
